@@ -55,6 +55,7 @@ $index-card-x-padding: 25px;
 $widget-x-padding: 22px;
 $post-content-x-padding: 2em;
 $body-background: #f3f3f3;
+$header-background: #100e17;
 
 $media-xs: 576px;
 $media-md: 768px;
@@ -634,13 +635,17 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-    position: relative;
-    float: left;
-    width: 100%;
+
+    &.toggled .menu-toggle{
+        margin-bottom: 15px;
+    }
+
+    background: #100e17;
     display: block;
     clear: both;
     font-family: "Fira Sans", sans-serif;
-    text-transform: capitalize;    padding-top: 0.6em;
+    text-transform: capitalize;
+    padding-top: 16px;
 }
 
 .main-navigation ul {
@@ -650,18 +655,22 @@ a:active {
 
 }
 
-@media screen and (min-width: 730px) {
-    .main-navigation ul {
-        margin: 0 auto;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
+@media screen and (min-width: $media-md) {
+
+    .main-navigation {
+        & ul {
+            margin: 0 auto;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
     }
 }
 
 .main-navigation li {
     float: left;
     position: relative;
+    margin-top: 10px;
 }
 
 .main-navigation a {
@@ -751,41 +760,48 @@ a:active {
     }
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: $media-md) {
 
     .main-navigation {
         padding-bottom: 0;
+        margin-top: 20px;
     }
 
     .menu-toggle {
-        display: block;
-        height: 3.75em;
-        padding: 0 1em;
-        margin-left: 1em;
-        font-weight: normal;
-        font-size: 14px;
-        text-decoration: none;
-        line-height: 3.75em;
-        color: white;
-        background: transparent;
+    padding: 0 1em;
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    background: #f3f3f3;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        &:hover, &:focus{
+            background: #f3f3f3;
+        }
+
+        & > span{
+            margin-top: 2px;
+        }
     }
 
     .menu-toggle:before {
         display: inline-block;
         padding: 0;
-
+        margin-right: 10px;
         vertical-align: top;
         font-family: 'Fontawesome';
         font-size: 1.5em;
-        color: #fff;
         -webkit-font-smoothing: antialiased;
         content: '\f0c9';
     }
 
     .main-navigation.toggled .nav-menu {
         display: block;
-        border-top: 1px solid;
-        border-top-color: #fff;
     }
 
     .main-navigation ul {
@@ -795,10 +811,12 @@ a:active {
 
     .main-navigation li {
         float: none;
+        margin: 7px 0;
     }
 
     .main-navigation li a {
-        padding: 1.3em 2em;
+        padding: 12px;
+        margin: 0;
     }
 
     .main-navigation li li a {
@@ -926,7 +944,7 @@ a:active {
     content: '\f0e1';
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: $media-md) {
     #menu-social ul {
         position: absolute;
         top: 0;
@@ -956,7 +974,7 @@ a:active {
 }
 
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: $media-md) {
     .search-toggle {
         position: absolute;
         top: 0;
@@ -1262,10 +1280,15 @@ img .aligncenter {
     margin: 0 auto;
     padding: 20px 0;
     width: 90%;
-    display: flex;
     min-height: 100px;
-    align-items: center;
-    justify-content: space-between;
+}
+@media (min-width: 768px) {
+    .site-branding {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .title-container {
@@ -1848,9 +1871,9 @@ input[type="search"] {
     margin-bottom: 0;
     font-size: 1.5em;
     background-color: #fff;
-    padding: 10px 10px 0;
+    padding: 10px;
     width: 100%;
-    border-radius: 3px;
+    border-radius: 4px;
     display: block;
     position: relative;
 }
@@ -2266,7 +2289,7 @@ p cite {
 
     @include xs{
         padding: 2px ($index-card-x-padding - 5px);
-        margin: 0;
+        margin: 10px;
     }
 }
 
@@ -2604,12 +2627,13 @@ object {
 }
 
 .featured-image-single-post {
-    background: #333;
+    background: $header-background;
 }
 
 .featured-image-single-post img {
     display: block;
     margin: 0 auto;
+
 }
 
 /*--------------------------------------------------------------
