@@ -39,7 +39,10 @@
                     <div class="navigation-container">
 <!--                        Site navigation-->
                         <nav id="site-navigation" class="main-navigation" role="navigation">
-                            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'life-notes' ); ?></button>
+                            <button class="menu-toggle" aria-controls="primary-menu"
+                                    aria-expanded="false">
+                                <span>Menu</span>
+                            </button>
                             <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 
                             <!-- the followings are social media buttons not used due to bad UX-->
@@ -61,14 +64,6 @@
                         <?php // get_search_form(); ?>
                     </div>
                 </div> -->
-
-    <?php
-        if (has_post_thumbnail() && is_single()) {
-            echo '<div class="featured-image-single-post clear">';
-            echo the_post_thumbnail('full');
-            echo '</div>';
-        }
-    ?>
 
 	</header><!-- #masthead -->
 

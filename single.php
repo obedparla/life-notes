@@ -11,12 +11,18 @@ get_header(); ?>
 
 	<div id="primary" class="single-content">
 		<main id="main" class="site-main single" role="main">
-
+            <?php
+            if (has_post_thumbnail() && is_single()) {
+                echo '<div class="featured-image-single-post clear">';
+                echo the_post_thumbnail('full');
+                echo '</div>';
+            }
+            ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', get_post_format() );
-                        
+
                         //get_template_part( 'template-parts/content', 'single');
 
 			the_post_navigation( array(
