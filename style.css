@@ -604,7 +604,6 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  background: #100e17;
   display: block;
   clear: both;
   font-family: "Fira Sans", sans-serif;
@@ -1060,7 +1059,6 @@ a:active {
 .paging-navigation {
   margin-top: -2em;
   text-align: center;
-  border-top: solid 4px #333;
 }
 
 .paging-navigation ul {
@@ -1302,7 +1300,7 @@ input[type=search] {
   .widget {
     float: left;
     width: 300px;
-    margin: 0 1em 1.8em;
+    margin: 0 1em 1em;
     /*border: solid 2px #e0e0e0*/
   }
 }
@@ -1959,7 +1957,7 @@ input[type=search] {
 
 /*Meta data / author info and gravatar*/
 .entry-meta {
-  margin: 2em -2em 1em;
+  margin: 1em -2em 1em;
   padding: 0.7em 1em;
   font-family: "Fira Sans", sans-serif;
   font-size: 100%;
@@ -2144,7 +2142,7 @@ input[type=search] {
 }
 
 .hentry {
-  margin: 0 1em 1.5em;
+  margin: 0 1em 1em;
   background: #fff;
   padding: 2px 25px;
   border-radius: 6px;
@@ -2484,7 +2482,8 @@ object {
 
 .featured-image-single-post {
   background: #100e17;
-  margin: 0 1em 1.5em;
+  margin: 0 -2em;
+  max-width: calc(100% + ($post-content-x-padding*2));
 }
 
 .featured-image-single-post img {
