@@ -608,7 +608,7 @@ a:active {
   clear: both;
   font-family: "Fira Sans", sans-serif;
   text-transform: capitalize;
-  padding-top: 16px;
+  padding-top: 6px;
 }
 .main-navigation.toggled .menu-toggle {
   margin-bottom: 15px;
@@ -623,7 +623,6 @@ a:active {
 @media screen and (min-width: 768px) {
   .main-navigation ul {
     margin: 0 auto;
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
@@ -636,15 +635,21 @@ a:active {
 
 .main-navigation a {
   display: block;
-  padding: 0.6em;
-  border: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 6px;
   margin-right: 10px;
   font-size: 17px;
   text-decoration: none;
   line-height: 20px;
   color: #dddddd;
   transition: all 0.4s;
-  border-radius: 3px;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .main-navigation a {
+    border-bottom: none;
+    border-radus: none;
+  }
 }
 
 .main-navigation ul ul {
@@ -976,7 +981,8 @@ a:active {
 --------------------------------------------------------------*/
 .post-navigation,
 .paging-navigation {
-  padding: 2em 0;
+  padding-top: 10px;
+  margin: 10px;
   font-family: "Fira Sans", sans-serif;
   text-align: left;
   overflow: hidden;
@@ -984,13 +990,11 @@ a:active {
 
 @media screen and (min-width: 50em) {
   .post-navigation {
-    padding: 2em 3em;
+    margin: 1em;
   }
 }
 .nav-links {
-  max-width: 45em;
   margin: 0 auto;
-  padding: 0 0.4em;
 }
 
 .post-navigation a,
@@ -1227,6 +1231,11 @@ img .aligncenter {
   margin-bottom: 0;
   text-align: center;
   font-family: "Handlee", cursive;
+}
+@media (max-width: 767px) {
+  .site-description {
+    font-size: 18px;
+  }
 }
 
 .site-branding a {
@@ -1860,11 +1869,12 @@ input[type=search] {
 /* Typography */
 .entry-title {
   font-weight: 900;
-  font-size: 40px;
-  font-size: 2.5rem;
+  font-size: 32px;
+  font-size: 2rem;
   line-height: 1.1em;
   color: #333;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .entry-content a {
@@ -2151,7 +2161,7 @@ input[type=search] {
 @media (max-width: 576px) {
   .hentry {
     padding: 2px 20px;
-    margin: 10px;
+    margin: 10px 10px 20px;
   }
 }
 
@@ -2159,9 +2169,11 @@ input[type=search] {
   padding: 0.1em 2em;
 }
 
-@media screen and (max-width: 50em) {
+@media (max-width: 767px) {
   .single .hentry {
     padding: 0.1em 1.4em;
+    margin: 0;
+    border-radius: 0;
   }
 }
 .page .hentry {
@@ -2483,7 +2495,7 @@ object {
 .featured-image-single-post {
   background: #100e17;
   margin: 0 -2em;
-  max-width: calc(100% + ($post-content-x-padding*2));
+  max-width: calc(100% + (2em * 2));
 }
 
 .featured-image-single-post img {
