@@ -87,6 +87,6 @@
     <?php } ?>
 
     <footer class="entry-footer">
-        <?php life_notes_entry_footer(); ?>
+        <?php life_notes_tagged_as(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

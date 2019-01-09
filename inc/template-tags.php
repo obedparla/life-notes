@@ -35,7 +35,7 @@ if ( ! function_exists( 'life_notes_posted_on' ) ) :
  */
 function life_notes_posted_on() {
 	$byline = sprintf(
-		esc_html_x( 'Written by %s', 'post author', 'life-notes' ),
+		esc_html_x( '%s', 'post author', 'life-notes' ),
                 //"<b>Obed Parlapiano</b>"
                 //Below original code to link to the author
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
@@ -72,15 +72,15 @@ if ( ! function_exists( 'life_notes_index_posted_on' ) ) :
  */
 function life_notes_index_posted_on() {
 	$byline = sprintf(
-		esc_html_x( 'Written by %s', 'post author', 'life' ),
+		esc_html_x( '%s', 'post author', 'life' ),
                 //"<b>Obed Parlapiano</b>"
                 //Below original code to link to the author
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"> ' . esc_html( get_the_author() ) . '</span>'
 	);
 
 	echo '<div class="meta-content">';
 
-	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' .
+	echo '<span class="byline">' . $byline . '</span> - <span class="posted-on">' .
         life_notes_posted_time() . '</span>'; // WPCS: XSS OK.
 
         /* translators: used between list items, there is a space after the comma */
@@ -95,43 +95,17 @@ function life_notes_index_posted_on() {
 }
 endif;
 
-
-//if ( ! function_exists( 'life_notes_entry_footer' ) ) :
-///**
-// * Prints HTML with meta information for the categories, tags and comments.
-// */
-//function life_notes_entry_footer() {
-//	// Hide category and tag text for pages.
-//	if ( 'post' === get_post_type() ) {
-//
-//            //Displays the tags with fontawesome icon
-//             echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' );
-//	}
-//
-//
-//	edit_post_link(
-//		sprintf(
-//			/* translators: %s: Name of current post */
-//			esc_html__( 'Edit %s', 'life-notes' ),
-//			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-//		),
-//		'<span class="edit-link">',
-//		'</span>'
-//	);
-//}
-//endif;
-
-if ( ! function_exists( 'life_notes_entry_footer' ) ) :
+if ( ! function_exists( 'life_notes_tagged_as' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function life_notes_entry_footer() {
+function life_notes_tagged_as() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'life-notes' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'life-notes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'life-notes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 

@@ -18,17 +18,17 @@
 			</figure>
 		<?php }*/
 		?>
-		
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		
+
 		<div class="entry-meta">
 			<?php life_notes_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php 
+		<?php
                 echo "Hola!";
                 the_content(); ?>
 		<?php
@@ -40,6 +40,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php life_notes_entry_footer(); ?>
+		<?php life_notes_tagged_as(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

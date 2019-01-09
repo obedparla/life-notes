@@ -1997,8 +1997,8 @@ input[type="search"] {
   @include font-size(32);
   line-height: 1.1em;
   color: #333;
-  text-align: center;
   text-transform: capitalize;
+  margin-top: 0;
 }
 
 .entry-content a {
@@ -2121,15 +2121,14 @@ p cite {
   border-bottom: 2px solid #000;
 }
 
-
-.byline {
-  display: block;
-  margin-top: 0.5em;
+.single-entry-meta{
+  @include font-size(14);
+  margin-top: 10px;
+  margin-bottom: 4px;
 }
 
 .posted-on,
 .entry-meta .comments-link {
-  display: block;
   padding: 0;
 }
 
@@ -2322,7 +2321,6 @@ p cite {
 .byline,
 .posted-on,
 .entry-meta .comments-link {
-  display: block;
   padding: 0;
 }
 
@@ -2802,4 +2800,12 @@ img.alignleft {
 
 .site-info {
   text-align: center;
+}
+
+.entry-footer {
+  display: none;
+}
+
+.main-navigation a {
+  font-weight: normal;
 }
