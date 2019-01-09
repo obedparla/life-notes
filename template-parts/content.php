@@ -13,6 +13,15 @@
 
     <header class="entry-header">
         <?php
+        if ('post' === get_post_type()) {
+            if (is_single()) { ?>
+                <div class="single-entry-meta">
+                    <?php life_notes_index_posted_on(); ?>
+                </div><!-- .entry-meta -->
+                <?php
+            }
+        }
+
         if (is_single()) {
             the_title('<h1 class="entry-title">', '</h1>');
 
@@ -34,18 +43,12 @@
         }
 
         if ('post' === get_post_type()) {
-            if (is_single()) {
-                ?>
-                <div class="entry-meta">
-                    <?php life_notes_posted_on(); ?>
-                </div><!-- .entry-meta -->
-            <?php } else { ?>
+            if (!is_single()) { ?>
                 <div class="index-entry-meta">
                     <?php life_notes_index_posted_on(); ?>
                 </div><!-- .entry-meta -->
                 <?php
             }
-
         } ?>
     </header><!-- .entry-header -->
 

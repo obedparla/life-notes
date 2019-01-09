@@ -7,35 +7,40 @@
  * @package life-notes
  */
 
+
+function life_notes_posted_time(){
+    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+        $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+    }
+
+    $time_string = sprintf( $time_string,
+    esc_attr( get_the_date( 'c' ) ),
+    esc_html( get_the_date() ),
+    esc_attr( get_the_modified_date( 'c' ) ),
+    esc_html( get_the_modified_date() )
+);
+
+	$posted_on = sprintf(
+        esc_html_x( '%s', 'post date', 'life-notes' ),
+        $time_string
+    );
+
+	return $posted_on;
+}
+
 if ( ! function_exists( 'life_notes_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function life_notes_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'life-notes' ),
-                $time_string
-	);
-
 	$byline = sprintf(
 		esc_html_x( 'Written by %s', 'post author', 'life-notes' ),
                 //"<b>Obed Parlapiano</b>"
                 //Below original code to link to the author
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
-        
+
         // Display the author avatar if the author has a Gravatar
 	$author_id = get_the_author_meta( 'ID' );
 	if ( life_notes_validate_gravatar( $author_id ) ) {
@@ -44,16 +49,17 @@ function life_notes_posted_on() {
 	} else {
 		echo '<div class="meta-content">';
 	}
-        
-	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-        
+
+	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' .
+        life_notes_posted_time() . '</span>'; // WPCS: XSS OK.
+
         /* translators: used between list items, there is a space after the comma */
         /*Shoes the CATEGORIE POSTED ON*/
         $categories_list = get_the_category_list( esc_html__( ', ', 'life-notes' ) );
         if ( $categories_list && life_notes_categorized_blog() ) {
             printf( '<span class="cat-links">' . esc_html__( '%1$s', 'life-notes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
         }
-        
+
         echo '</div><!-- .meta-content -->';
 
 
@@ -65,34 +71,18 @@ if ( ! function_exists( 'life_notes_index_posted_on' ) ) :
  * Prints HTML with meta information for post-date/time and author on index pages.
  */
 function life_notes_index_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'life' ),
-                $time_string
-	);
-
 	$byline = sprintf(
 		esc_html_x( 'Written by %s', 'post author', 'life' ),
                 //"<b>Obed Parlapiano</b>"
                 //Below original code to link to the author
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
-        
+
 	echo '<div class="meta-content">';
 
-	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-        
+	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' .
+        life_notes_posted_time() . '</span>'; // WPCS: XSS OK.
+
         /* translators: used between list items, there is a space after the comma */
         /*Shoes the CATEGORIE POSTED ON*/
         $categories_list = get_the_category_list( esc_html__( ', ', 'life-notes' ) );
@@ -113,7 +103,7 @@ endif;
 //function life_notes_entry_footer() {
 //	// Hide category and tag text for pages.
 //	if ( 'post' === get_post_type() ) {
-//            
+//
 //            //Displays the tags with fontawesome icon
 //             echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' );
 //	}
@@ -205,7 +195,7 @@ add_action( 'save_post',     'life_notes_category_transient_flusher' );
 
 /*
  * Social media icon menu as per http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
- * 
+ *
  */
 
 function life_notes_social_menu() {
@@ -263,7 +253,7 @@ function life_notes_validate_gravatar($id_or_email) {
 			$data = $response['response']['code'];
 		}
 	    wp_cache_set($hashkey, $data, $group = '', $expire = 60*5);
-	}		
+	}
 	if ($data == '200'){
 		return true;
 	} else {
