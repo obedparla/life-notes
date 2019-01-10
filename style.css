@@ -473,44 +473,6 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type=button],
-input[type=reset],
-input[type=submit] {
-  padding: 1em 2em;
-  font-size: 10px;
-  font-size: 1rem;
-  font-family: "Fira Sans";
-  text-transform: uppercase;
-  line-height: 1;
-  color: white;
-  background: #333;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  -webkit-appearance: button;
-  /* Corrects inability to style clickable 'input' types in iOS */
-}
-
-button:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover {
-  background: #455D8A;
-}
-
-button:focus,
-input[type=button]:focus,
-input[type=reset]:focus,
-input[type=submit]:focus,
-button:active,
-input[type=button]:active,
-input[type=reset]:active,
-input[type=submit]:active {
-  background: #333;
-}
-
 input[type=text],
 input[type=email],
 input[type=url],
@@ -1002,8 +964,9 @@ a:active {
   width: 100%;
   text-decoration: none;
   padding: 1em;
-  color: #fff;
-  background: #333;
+  color: #000;
+  background: #fff;
+  border-radius: 4px;
 }
 
 .post-navigation a:hover,
@@ -1315,7 +1278,6 @@ input[type=search] {
 .widget-title {
   margin: 0px -22px 0;
   padding: 9px 20px 10px;
-  background: #024059;
   background: #F55A32;
   border-radius: 6px 6px 0 0;
   color: #fff;
@@ -1817,7 +1779,11 @@ input[type=search] {
 }
 
 .continue-reading a,
-.entry-content .continue-reading a {
+.entry-content .continue-reading a,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
   display: inline-block;
   margin: 0px auto 16px;
   padding: 12px 20px;
@@ -1830,7 +1796,15 @@ input[type=search] {
 }
 .continue-reading a:hover, .continue-reading a:focus,
 .entry-content .continue-reading a:hover,
-.entry-content .continue-reading a:focus {
+.entry-content .continue-reading a:focus,
+button:hover,
+button:focus,
+input[type=button]:hover,
+input[type=button]:focus,
+input[type=reset]:hover,
+input[type=reset]:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
   border-color: #f55a32;
 }
 
@@ -2195,7 +2169,7 @@ input[type=search] {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+  margin: 16px 0 0;
 }
 
 .page-links {
@@ -2218,11 +2192,6 @@ input[type=search] {
   padding: 20px;
 }
 
-@media screen and (min-width: 40em) {
-  .comments-area {
-    margin: 4em 1em;
-  }
-}
 .comments-title {
   margin-bottom: 1.5em;
   margin-top: 3em;
@@ -2297,7 +2266,7 @@ input[type=search] {
   }
 
   .comments-area {
-    margin: 4em 3em;
+    margin: 0;
     font-size: 1.1em;
   }
 
@@ -2397,7 +2366,7 @@ input[type=search] {
 
 /* Comment Form */
 .comment-form {
-  padding-bottom: 2.5rem;
+  padding-bottom: 16px;
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -2633,14 +2602,15 @@ img.alignleft {
 --------------------------------------------------------------*/
 .site-footer {
   padding: 2rem;
-  color: #fff;
+  color: #f3f3f3;
   font-family: "Fira Sans", sans-serif;
-  font-size: 16px;
-  background: #333;
+  font-size: 14px;
+  background: #100e17;
 }
 
 .site-footer a {
-  color: #fff;
+  color: #f3f3f3;
+  border-bottom: 1px solid white;
 }
 
 .site-info {
