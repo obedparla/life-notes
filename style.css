@@ -13,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-life-notes is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+life-notes is based on Underscores http://underscores.me/, (C) 2012-2015 Automatic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -317,7 +317,6 @@ pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
-  font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -331,7 +330,6 @@ tt,
 var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
-  font-size: 0.9375rem;
 }
 
 abbr,
@@ -618,7 +616,7 @@ a:active {
 @media (min-width: 768px) {
   .main-navigation a {
     border-bottom: none;
-    border-radus: none;
+    border-radius: 0;
   }
 }
 
@@ -671,7 +669,6 @@ a:active {
 .main-navigation ul ul .current_page_parent,
 .main-navigation .current_page_parent .current_page_item > a {
   color: #fff;
-  color: white;
   background: #313131;
 }
 
@@ -693,7 +690,6 @@ a:active {
   }
 
   .menu-toggle {
-    padding: 0 1em;
     font-weight: normal;
     font-size: 14px;
     text-decoration: none;
@@ -892,8 +888,8 @@ a:active {
   }
 }
 /* Search icon end*/
-.site-main .comment-navigation .site-main .paging-navigation {
-  font-size: 10px;
+.site-main .comment-navigation,
+.site-main .paging-navigation {
   font-size: 0.75rem;
   font-family: "Fira Sans", sans-serif;
 }

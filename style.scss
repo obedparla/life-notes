@@ -12,7 +12,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-life-notes is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+life-notes is based on Underscores http://underscores.me/, (C) 2012-2015 Automatic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -336,12 +336,12 @@ textarea {
   font-size: 18px;
   font-family: 'Merriweather', serif;
   line-height: 25px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: "liga" on;
-    color: rgba(0,0,0,.84);
-    /* color: black; */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  color: rgba(0, 0, 0, .84);
+  /* color: black; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -373,7 +373,6 @@ pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
-  font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -387,7 +386,6 @@ tt,
 var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
-  font-size: 0.9375rem;
 }
 
 abbr,
@@ -444,14 +442,13 @@ blockquote {
   color: $secondaryColor;
 
   &::before {
-  font-family: 'FontAwesome';
-  content: "\f10d";
-  position: absolute;
-  left: -1.5em;
-  color: $secondaryColor;
+    font-family: 'FontAwesome';
+    content: "\f10d";
+    position: absolute;
+    left: -1.5em;
+    color: $secondaryColor;
+  }
 }
-}
-
 
 
 blockquote em {
@@ -462,8 +459,7 @@ blockquote cite {
   display: block;
   margin-top: 1em;
   margin-left: 40%;
-  font-size: 20px;
-  font-size: 1.25rem;
+  @include font-size(20);
   font-family: 'Fira Sans', sans-serif;
   font-style: normal;
   line-height: 20px;
@@ -496,7 +492,7 @@ ol {
   margin: 0 0 1.5em 3em;
 
 
-  @include md-down{
+  @include md-down {
     margin: 0 0 10px 10px;
   }
 }
@@ -679,9 +675,9 @@ a:active {
   transition: all 0.4s;
   border-radius: 4px;
 
-  @include md{
+  @include md {
     border-bottom: none;
-    border-radus: none;
+    border-radius: 0;
   }
 }
 
@@ -742,7 +738,6 @@ a:active {
 .main-navigation ul ul .current_page_parent,
 .main-navigation .current_page_parent .current_page_item > a {
   color: #fff;
-  color: hsl(0, 0%, 100%);
   background: #313131;
 }
 
@@ -766,7 +761,6 @@ a:active {
   }
 
   .menu-toggle {
-    padding: 0 1em;
     font-weight: normal;
     font-size: 14px;
     text-decoration: none;
@@ -978,9 +972,8 @@ a:active {
 
 /* Search icon end*/
 
-.site-main .comment-navigation
+.site-main .comment-navigation,
 .site-main .paging-navigation {
-  font-size: 10px;
   font-size: 0.75rem;
   font-family: 'Fira Sans', sans-serif;
 
@@ -1065,9 +1058,9 @@ a:active {
   @include card;
   margin: 3px;
 
-  &:hover, 
-  &:focus{
-      color: $secondaryColor;
+  &:hover,
+  &:focus {
+    color: $secondaryColor;
   }
 }
 
@@ -1191,8 +1184,8 @@ a:active {
 .alignleft {
   display: inline;
   float: left;
-  
-  @include md{
+
+  @include md {
     margin-right: 1.5em;
   }
 
@@ -1202,7 +1195,7 @@ a:active {
   display: inline;
   float: right;
 
-    @include md{
+  @include md {
     margin-left: 1.5em;
   }
 }
@@ -1311,7 +1304,7 @@ img .aligncenter {
   text-align: center;
   font-family: "Handlee", cursive;
 
-  @include md-down{
+  @include md-down {
     font-size: 18px;
   }
 }
@@ -1426,7 +1419,7 @@ input[type="search"] {
   padding: .3em 0;
   border-bottom: 1px solid #d4d4d4;
 
-  &:last-child{
+  &:last-child {
     border-bottom: none;
   }
 }
@@ -1988,13 +1981,13 @@ input[type="submit"] {
 }
 
 .entry-content a {
-    text-decoration: none;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right,rgba(0,0,0,.84) 100%,rgba(0,0,0,0) 0);
-    background-image: linear-gradient(to right,currentColor 100%,currentColor 0);
-    background-size: 1px 1px;
-    background-position: 0 1.05em;
-    background-position: 0 calc(1em + 2px);
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .84) 100%, rgba(0, 0, 0, 0) 0);
+  background-image: linear-gradient(to right, currentColor 100%, currentColor 0);
+  background-size: 1px 1px;
+  background-position: 0 1.05em;
+  background-position: 0 calc(1em + 2px);
 }
 
 .entry-content h1,
@@ -2108,7 +2101,7 @@ p cite {
   border-bottom: 2px solid #000;
 }
 
-.single-entry-meta{
+.single-entry-meta {
   @include font-size(14);
   margin-top: 10px;
   margin-bottom: 4px;
@@ -2621,7 +2614,7 @@ object {
   margin: 0 -#{$post-content-x-padding};
   max-width: calc(100% + (#{$post-content-x-padding} * 2));
 
-  @include md-down{
+  @include md-down {
     margin: 0 -1.4em;
   }
 }
@@ -2783,7 +2776,7 @@ img.alignleft {
   color: #f3f3f3;
   border-bottom: 1px solid white;
 
-  &:hover, &:focus{
+  &:hover, &:focus {
     text-decoration: none;
   }
 }
