@@ -281,7 +281,12 @@ textarea {
   font-size: 18px;
   font-family: "Merriweather", serif;
   line-height: 25px;
-  color: #000;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  color: rgba(0, 0, 0, 0.84);
+  /* color: black; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -289,7 +294,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   font-family: "Fira Sans", sans-serif;
   color: #000;
-  color: black;
   -ms-word-break: break-word;
   word-break: break-word;
 }
@@ -381,17 +385,15 @@ blockquote {
   font-size: 1.5em;
   font-style: italic;
   line-height: 1.4em;
-  margin: 1.5em 0 1.5em 2em;
   position: relative;
-  color: #999;
+  color: #F55A32;
 }
-
 blockquote::before {
   font-family: "FontAwesome";
   content: "";
   position: absolute;
   left: -1.5em;
-  color: #999;
+  color: #F55A32;
 }
 
 blockquote em {
@@ -434,6 +436,12 @@ hr {
 ul,
 ol {
   margin: 0 0 1.5em 3em;
+}
+@media (max-width: 767px) {
+  ul,
+ol {
+    margin: 0 0 10px 10px;
+  }
 }
 
 ul {
@@ -742,10 +750,6 @@ a:active {
     padding-left: 6em;
   }
 
-  .main-navigation li:hover > a {
-    background: #313131;
-  }
-
   .main-navigation ul ul,
 .main-navigation ul ul ul {
     position: relative;
@@ -753,7 +757,6 @@ a:active {
     left: 0;
     display: block;
     float: none;
-    background: #313131;
   }
 
   .main-navigation ul ul a {
@@ -762,7 +765,7 @@ a:active {
 
   .main-navigation ul a:hover,
 .main-navigation ul ul a:hover {
-    background: #4d4d4d;
+    color: #F55A32;
   }
 
   .main-navigation .current_page_ancestor {
@@ -1090,13 +1093,21 @@ a:active {
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 1.5em;
+}
+@media (min-width: 768px) {
+  .alignleft {
+    margin-right: 1.5em;
+  }
 }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 1.5em;
+}
+@media (min-width: 768px) {
+  .alignright {
+    margin-left: 1.5em;
+  }
 }
 
 .aligncenter {
@@ -1844,11 +1855,12 @@ input[type=submit]:focus {
 
 .entry-content a {
   text-decoration: none;
-  color: #3379be;
-}
-
-.entry-content a:hover {
-  border-bottom: 1px solid #000;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.84) 100%, rgba(0, 0, 0, 0) 0);
+  background-image: linear-gradient(to right, currentColor 100%, currentColor 0);
+  background-size: 1px 1px;
+  background-position: 0 1.05em;
+  background-position: 0 calc(1em + 2px);
 }
 
 .entry-content h1,
@@ -2459,6 +2471,11 @@ object {
   margin: 0 -2em;
   max-width: calc(100% + (2em * 2));
 }
+@media (max-width: 767px) {
+  .featured-image-single-post {
+    margin: 0 -1.4em;
+  }
+}
 
 .featured-image-single-post img {
   display: block;
@@ -2612,6 +2629,9 @@ img.alignleft {
 .site-footer a {
   color: #f3f3f3;
   border-bottom: 1px solid white;
+}
+.site-footer a:hover, .site-footer a:focus {
+  text-decoration: none;
 }
 
 .site-info {
