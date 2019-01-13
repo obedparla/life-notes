@@ -727,9 +727,8 @@ a:active {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_item > a:hover,
 .main-navigation .current-menu-item > a:hover {
-  background: #f3f3f3;
-  color: #333;
-  font-weight: 900;
+  color: $secondaryColor;
+  font-weight: 700;
 }
 
 .main-navigation .current_page_ancestor {
@@ -1050,8 +1049,8 @@ a:active {
   margin: 0 auto;
 }
 
-.post-navigation a,
-.paging-navigation a {
+.post-navigation .nav-links  a,
+.paging-navigation  .nav-links  a {
   display: block;
   width: 98%;
   text-decoration: none;
@@ -1076,14 +1075,26 @@ a:active {
   padding-bottom: 0.1em;
 }
 
-@media screen and (min-width: 30em) {
 
   .nav-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: stretch;
     padding: 0;
+
+    a {
+      @include card;
+      padding: 8px 10px;
+
+      &:hover, &:focus{
+        color: $secondaryColor;
+        text-decoration: none;
+      }
+    }
   }
+
+
+@media screen and (min-width: 30em) {
 
   .post-navigation .nav-previous {
     display: flex;
@@ -1872,8 +1883,11 @@ input[type="search"] {
   text-align: center;
 }
 
-.entry-title.index-excerpt {
+.featured-image-index+.entry-title.index-excerpt{
   margin-top: -50px;
+}
+
+.entry-title.index-excerpt {
   margin-bottom: 0;
   font-size: 1.5em;
   background-color: #fff;
