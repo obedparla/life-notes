@@ -56,6 +56,7 @@ $widget-x-padding: 22px;
 $post-content-x-padding: 2em;
 $body-background: #f3f3f3;
 $header-background: #100e17;
+$secondaryColor: #F55A32;
 
 $media-xs: 576px;
 $media-md: 768px;
@@ -95,6 +96,12 @@ $media-xl: 1200px;
 @mixin font-size($sizeValue: 16) {
   font-size: ($sizeValue) + px;
   font-size: ($sizeValue / 16 ) + rem;
+}
+
+@mixin card {
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
 /*--------------------------------------------------------------
@@ -571,6 +578,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
   padding: 3px;
+  border-radius: 4px
 }
 
 textarea {
@@ -691,8 +699,7 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li:focus > a {
-  color: #fff;
-  /*background: #4d4d4d;*/
+  color: $secondaryColor;
 }
 
 
@@ -1049,19 +1056,16 @@ a:active {
   display: block;
   width: 100%;
   text-decoration: none;
-  padding: 1em;
-  color: #000;
-  background: #fff;
-  border-radius: 4px;
+  padding: 16px;
+  @include card;
+  margin: 3px;
+
+  &:hover, 
+  &:focus{
+      color: $secondaryColor;
+  }
 }
 
-.post-navigation a:hover,
-.post-navigation a:focus,
-.paging-navigation a:hover,
-.paging-navigation a:focus {
-  border-color: #000;
-  background: #455D8A;
-}
 
 .post-navigation .post-title {
   font-size: 1em;
@@ -1864,6 +1868,7 @@ input[type="search"] {
   border-radius: 4px;
   display: block;
   position: relative;
+  text-align: center;
 }
 
 .entry-header .index-entry-meta {
@@ -2259,10 +2264,8 @@ p cite {
 
 .hentry {
   margin: 0 1em 1em;
-  background: #fff;
   padding: 2px $index-card-x-padding;
-  border-radius: 6px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  @include card;
 
   @include xs {
     padding: 2px ($index-card-x-padding - 5px);
@@ -2522,6 +2525,7 @@ p cite {
   font-family: 'Merriweather', serif;
   font-size: 18px;
   font-size: 1.1rem;
+  border-radius: 6px;
 }
 
 .comment-form label {
@@ -2584,6 +2588,7 @@ object {
 
 .featured-image-index {
   margin: -2px -#{$index-card-x-padding} 0;
+  transition: all 0.3s;
 
   @include xs {
     margin: -2px -#{$index-card-x-padding - 5px} 0;
