@@ -428,8 +428,24 @@ blockquote.alignright {
 hr {
   background-color: #ccc;
   border: 0;
-  height: 1px;
   margin-bottom: 1.5em;
+  margin-top: 2.4em;
+  display: block;
+  text-align: center;
+  overflow: visible;
+  height: 0;
+}
+hr:before {
+  content: "...";
+  display: inline-block;
+  margin-left: 0.6em;
+  color: rgba(0, 0, 0, 0.68);
+  position: relative;
+  top: -30px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 30px;
+  letter-spacing: 0.6em;
 }
 
 ul,
@@ -939,6 +955,10 @@ a:active {
 /*--------------------------------------------------------------
 ## Other Navigation
 --------------------------------------------------------------*/
+.post-navigation .nav-links {
+  justify-content: space-between;
+}
+
 .post-navigation,
 .paging-navigation {
   padding-top: 10px;
@@ -1046,7 +1066,7 @@ a:active {
 
 .paging-navigation li {
   display: inline-block;
-  margin-right: 4px;
+  font-size: 16px;
 }
 
 .paging-navigation li a {
@@ -1275,11 +1295,13 @@ input[type=search] {
 
 .widget {
   padding: 2px 20px;
-  margin: 10px 10px 20px;
+  margin: 10px 10px 2em;
   background: #fff;
-  margin-bottom: 2em;
   border-radius: 6px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+.widget .jetpack_subscription_widget input[type=submit] {
+  width: 100%;
 }
 
 @media screen and (min-width: 45em) {
