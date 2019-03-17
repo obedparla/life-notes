@@ -110,11 +110,11 @@ function life_notes_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
             ) );
-            
+
         register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widgets', 'life-notes' ),
 		'id'            => 'sidebar-2',
-		'description'   => __('Adds widgets to the footer', 'life-notes'), 
+		'description'   => __('Adds widgets to the footer', 'life-notes'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -128,23 +128,23 @@ add_action( 'widgets_init', 'life_notes_widgets_init' );
  */
 function life_notes_scripts() {
 	wp_enqueue_style( 'life-notes-style', get_stylesheet_uri() );
-        
+
         wp_enqueue_style('life-notes-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css');
-        
-        wp_enqueue_style('life-notes-google-fonts','https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic|Lato:100,100italic,400italic,700,900,900italic,700italic,400|Rock+Salt|Handlee|Merriweather:400,400italic,700,700italic|Fira+Sans:400,400italic,700,700italic');
+
+//        wp_enqueue_style('life-notes-google-fonts','https://fonts.googleapis.com/css?family=Rock+Salt|Handlee|Open+Sans:400,400italic,700|Fira+Sans:400,400italic,700');
 
         wp_enqueue_style('life-notes-awesome-fonts','https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-        
+
 	wp_enqueue_script( 'life-notes-navigation', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20120206', true );
-        
+
         wp_enqueue_script( 'life-notes-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-        
+
         wp_enqueue_script( 'life-notes-show-search-toggle', get_template_directory_uri() . '/js/show-toggle-search.js', array(), '20160202', true );
-        
+
         //wp_enqueue_script( 'life-notes-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20151230', true );
 
         //wp_enqueue_script( 'life-notes-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('life-notes-superfish'), '20151230', true );
-        
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -334,7 +334,7 @@ input,
 select,
 textarea {
   font-size: 18px;
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', serif;
   line-height: 25px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -346,7 +346,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: right;
-  font-weight: 900;
+  font-weight: bold;
   font-family: 'Fira Sans', sans-serif;
   color: #000;
   -ms-word-break: break-word;
@@ -371,7 +371,7 @@ address {
 
 pre {
   background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-family: Courier, monospace;
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 1.6em;
@@ -435,11 +435,10 @@ q {
 }
 
 blockquote {
-  font-size: 1.5em;
+  font-size: 22px;
   font-style: italic;
   line-height: 1.4em;
   position: relative;
-  color: $secondaryColor;
   margin: 16px 0 16px 1.5em;
 
   &::before {
@@ -448,6 +447,8 @@ blockquote {
     position: absolute;
     left: -1.5em;
     color: $secondaryColor;
+    font-size: 22px;
+
   }
 }
 
@@ -499,7 +500,6 @@ hr {
     color: rgba(0, 0, 0, .68);
     position: relative;
     top: -30px;
-    font-weight: 400;
     font-style: italic;
     font-size: 30px;
     letter-spacing: .6em;
@@ -746,7 +746,7 @@ a:active {
 .main-navigation .current_page_item > a:hover,
 .main-navigation .current-menu-item > a:hover {
   color: $secondaryColor;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .main-navigation .current_page_ancestor {
@@ -1039,7 +1039,7 @@ a:active {
 .nav-indicator {
   font-size: 10px;
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: bold;
   font-family: 'Fira Sans', sans-serif;
 }
 
@@ -1089,7 +1089,7 @@ a:active {
 
 .post-navigation .post-title {
   font-size: 1em;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 
@@ -1178,7 +1178,7 @@ a:active {
 
 .paging-navigation .current {
   padding: .8em 1.1em;
-  font-weight: 700;
+  font-weight: bold;
   color: $secondaryColor;
 }
 
@@ -1330,7 +1330,7 @@ img .aligncenter {
 }
 
 .site-title {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.6;
@@ -1339,7 +1339,7 @@ img .aligncenter {
 }
 
 .site-description {
-  font-weight: 400;
+  font-weight: normal;
   font-size: 16px;
   margin-top: 10px;
   margin-bottom: 0;
@@ -1569,7 +1569,7 @@ input[type="search"] {
 
 .rssSummary {
   padding: .5em 0;
-  font-family: "Merriweather", serif;
+  font-family: "Open Sans", serif;
   font-size: .8em;
   line-height: 1.4em;
 }
@@ -1594,7 +1594,7 @@ input[type="search"] {
 .widget_calendar caption {
   padding: .5em 0;
   font-size: 1em;
-  font-weight: 700;
+  font-weight: bold;
   text-align: left;
 }
 
@@ -1692,7 +1692,7 @@ input[type="search"] {
 .widget_popper_recent_comments .excerpt {
   margin-top: 0;
   margin-bottom: .8em;
-  font-family: "Merriweather", serif;
+  font-family: "Open Sans", serif;
   font-size: .8em;
   line-height: 1.4em;
 }
@@ -1904,7 +1904,7 @@ input[type="search"] {
 
 .taxonomy-description p {
   margin: 2em auto;
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', serif;
   text-align: center;
 }
 
@@ -1938,7 +1938,7 @@ input[type="search"] {
 }
 
 .index-entry-meta a {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 
@@ -2087,8 +2087,7 @@ input[type="submit"] {
 }
 
 .entry-content blockquote p {
-  font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 22px;
   line-height: 1.2em;
 }
 
@@ -2135,7 +2134,7 @@ p cite {
 }
 
 .entry-meta a {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .entry-meta a,
@@ -2250,7 +2249,7 @@ p cite {
 }
 
 .entry-footer span a {
-  font-weight: 700;
+  font-weight: bold;
   text-decoration: none;
   color: #000;
   font-size: 18px;
@@ -2303,8 +2302,7 @@ p cite {
   }
 
   .entry-content blockquote p {
-    font-size: 18px;
-    font-size: 1.12rem;
+    font-size: 22px;
     line-height: 1.2em;
   }
 
@@ -2352,7 +2350,7 @@ p cite {
 }
 
 .entry-meta a {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .updated:not(.published) {
@@ -2562,7 +2560,7 @@ p cite {
 
 .comment-reply-title {
   margin-bottom: .5em;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 30px;
   font-size: 1.9rem;
 }
@@ -2577,7 +2575,7 @@ p cite {
 }
 
 .comment-form textarea {
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', serif;
   font-size: 18px;
   font-size: 1.1rem;
   border-radius: 6px;
