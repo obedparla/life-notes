@@ -126,28 +126,23 @@ add_action( 'widgets_init', 'life_notes_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function life_notes_scripts() {
-	wp_enqueue_style( 'life-notes-style', get_stylesheet_uri() );
+function life_notes_scripts()
+{
+    wp_enqueue_style('life-notes-style', get_stylesheet_uri());
 
-        wp_enqueue_style('life-notes-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css');
+    wp_enqueue_script('life-notes-navigation', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20120206', true);
 
-//        wp_enqueue_style('life-notes-google-fonts','https://fonts.googleapis.com/css?family=Rock+Salt|Handlee|Open+Sans:400,400italic,700|Fira+Sans:400,400italic,700');
+    wp_enqueue_script('life-notes-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true);
 
-        wp_enqueue_style('life-notes-awesome-fonts','https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+    wp_enqueue_script('life-notes-show-search-toggle', get_template_directory_uri() . '/js/show-toggle-search.js', array(), '20160202', true);
 
-	wp_enqueue_script( 'life-notes-navigation', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20120206', true );
+    //wp_enqueue_script( 'life-notes-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20151230', true );
 
-        wp_enqueue_script( 'life-notes-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+    //wp_enqueue_script( 'life-notes-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('life-notes-superfish'), '20151230', true );
 
-        wp_enqueue_script( 'life-notes-show-search-toggle', get_template_directory_uri() . '/js/show-toggle-search.js', array(), '20160202', true );
-
-        //wp_enqueue_script( 'life-notes-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20151230', true );
-
-        //wp_enqueue_script( 'life-notes-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('life-notes-superfish'), '20151230', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }
 add_action( 'wp_enqueue_scripts', 'life_notes_scripts' );
 
