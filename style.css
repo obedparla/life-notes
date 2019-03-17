@@ -4,7 +4,7 @@ Theme Name: life-notes
 Author: Obed Parlapiano
 Author URI: http://obedparla.com/
 Description: This is a personal responsive awesome theme for my personal website,
-Version: 1.1
+Version: 2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: life-notes
@@ -382,19 +382,17 @@ q {
 }
 
 blockquote {
-  font-size: 22px;
   font-style: italic;
-  line-height: 1.4em;
-  position: relative;
-  margin: 16px 0 16px 1.5em;
-}
-blockquote::before {
-  font-family: "FontAwesome";
-  content: "";
-  position: absolute;
-  left: -1.5em;
-  color: #F55A32;
-  font-size: 22px;
+  margin: 0 0 20px;
+  --x-height-multiplier: 0.375;
+  --baseline-multiplier: 0.17;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -0.003em;
+  border-left: 3px solid rgba(0, 0, 0, 0.84);
+  padding-left: 20px;
+  padding-bottom: 2px;
 }
 
 blockquote em {
@@ -708,12 +706,12 @@ a:active {
 
   .menu-toggle {
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
     color: #000;
     width: 100%;
     background: #f3f3f3;
-    padding: 6px;
+    padding: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -723,17 +721,6 @@ a:active {
   }
   .menu-toggle > span {
     margin-top: 2px;
-  }
-
-  .menu-toggle:before {
-    display: inline-block;
-    padding: 0;
-    margin-right: 10px;
-    vertical-align: top;
-    font-family: "Fontawesome";
-    font-size: 1.5em;
-    -webkit-font-smoothing: antialiased;
-    content: "";
   }
 
   .main-navigation.toggled .nav-menu {
@@ -799,92 +786,6 @@ a:active {
   }
 }
 /*End responsive menu*/
-/* Social Menu */
-.menu-social ul {
-  float: right;
-  text-align: center;
-  list-style: none;
-}
-
-.menu-social ul li {
-  position: relative;
-  display: inline-block;
-  border-top: none;
-}
-
-.menu-social li a:before {
-  display: inline-block;
-  padding: 0;
-  vertical-align: top;
-  font-family: "Fontawesome";
-  font-size: 24px;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  content: "";
-}
-
-.menu-social li a[href*="facebook.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="twitter.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="dribbble.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="plus.google.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="pinterest.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="github.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="tumblr.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="youtube.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="flickr.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="vimeo.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="instagram.com"]::before {
-  content: "";
-}
-
-.menu-social li a[href*="linkedin.com"]::before {
-  content: "";
-}
-
-@media screen and (max-width: 768px) {
-  #menu-social ul {
-    position: absolute;
-    top: 0;
-    right: 3rem;
-    display: block;
-  }
-
-  #menu-social li a {
-    padding-left: 0.8em;
-    padding-right: 0.8em;
-  }
-}
-/* End social media menus*/
 /* Search icon */
 .search-toggle {
   float: right;
