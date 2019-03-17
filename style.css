@@ -1853,6 +1853,7 @@ input[type=submit]:focus {
 .entry-content blockquote p {
   font-size: 22px;
   line-height: 1.2em;
+  margin-bottom: 0;
 }
 
 * p cite {
