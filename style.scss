@@ -3,8 +3,8 @@ Theme Name: life-notes
 Author: Obed Marquez Parlapiano
 Author URI: http://obedparla.com/
 Description: This is a personal responsive awesome theme for my personal website
-Version: 2.1.1
-Template Version: 2.1.1
+Version: 2.1.2
+Template Version: 2.1.2
 GitHub Theme URI: https://github.com/obedparla/life-notes
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -432,7 +432,7 @@ q {
 
 blockquote {
   font-style: italic;
-  margin: 0 0 20px;
+  margin: 20px 0;
   --x-height-multiplier: 0.375;
   --baseline-multiplier: 0.17;
   font-weight: 400;
@@ -442,6 +442,10 @@ blockquote {
   border-left: 3px solid rgba(0, 0, 0, 0.84);
   padding-left: 20px;
   padding-bottom: 2px;
+
+  .noteText{
+    font-size: 18px;
+  }
 }
 
 blockquote em {
@@ -1931,6 +1935,17 @@ input[type="submit"] {
 .entry-content h5,
 .entry-content h6 {
   margin: 1em 0 0.4em 0;
+}
+
+blockquote {
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6 {
+    margin: 2em 0 0.4em 0;
+  }
 }
 
 .entry-content h1 {

@@ -29,6 +29,11 @@ function life_notes_posted_time(){
 	return $posted_on;
 }
 
+
+function life_notes_reading_time(){
+    echo '<span class="reading-time"> - '.do_shortcode('[rt_reading_time label="Reading Time:" postfix="minutes"]').'</span>';
+}
+
 if ( ! function_exists( 'life_notes_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -51,7 +56,7 @@ function life_notes_posted_on() {
 	}
 
 	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' .
-        life_notes_posted_time() . '</span>'; // WPCS: XSS OK.
+        life_notes_posted_time() . 'potato potato </span>'; // WPCS: XSS OK.
 
         /* translators: used between list items, there is a space after the comma */
         /*Shoes the CATEGORIE POSTED ON*/
@@ -60,6 +65,7 @@ function life_notes_posted_on() {
             printf( '<span class="cat-links">' . esc_html__( '%1$s', 'life-notes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
         }
 
+        life_notes_reading_time();
         echo '</div><!-- .meta-content -->';
 
 
@@ -89,7 +95,9 @@ function life_notes_index_posted_on() {
         if ( $categories_list && life_notes_categorized_blog() ) {
             printf( '<span class="cat-links">' . esc_html__( '%1$s', 'life-notes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
         }
-        echo '</div><!-- .meta-content -->';
+
+        life_notes_reading_time();
+    echo '</div><!-- .meta-content -->';
 
 
 }
