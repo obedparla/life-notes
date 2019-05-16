@@ -4,7 +4,7 @@ Theme Name: life-notes
 Author: Obed Marquez Parlapiano
 Author URI: http://obedparla.com/
 Description: This is a personal responsive awesome theme for my personal website
-Version: 2.1.4
+Version: 2.1.5
 Template Version: 2.1.4
 GitHub Theme URI: https://github.com/obedparla/life-notes
 License: GNU General Public License v2 or later
@@ -297,8 +297,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-family: "Fira Sans", sans-serif;
   color: #000;
-  -ms-word-break: break-word;
   word-break: break-word;
+  text-transform: capitalize;
 }
 
 p {
